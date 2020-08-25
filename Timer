@@ -1,0 +1,28 @@
+import time, random, replit
+from pyfiglet import figlet_format as ff
+t = int(input('Minutes: ')) * 60 + int(input('Seconds: '))
+s = time.time()
+timeup = False
+colors = ['\u001b[31m', '\u001b[32m', '\u001b[33m', '\u001b[34m', '\u001b[35m', '\u001b[36m', '\u001b[37m']
+while timeup == False:
+  c = time.time()
+  l = float((s - c + t) / 60)
+  minutes = str(l).split('.')[0]
+  seconds = str(l).split('.')[1]
+  seconds = '.' + seconds
+  seconds = float(seconds)
+  seconds = int(seconds * 60)
+  seconds = str(seconds)
+  if len(minutes) == 1:
+    minutes = '0'+minutes
+  if len(seconds) == 1:
+    seconds = '0'+ seconds
+  if not str(l)[0] == '-':
+    replit.clear()
+    print(random.choice(colors) + ff(minutes + ': ' + seconds, font='starwars'), end='', flush=True)
+  else: timeup = True
+  time.sleep(1)
+print('\u001b[36m\n\nTIMES UP!!!!')
+for i in range(20):
+  print(u"\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007")
+  time.sleep(.3)
